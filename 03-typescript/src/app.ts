@@ -1,8 +1,8 @@
 
 
 
-import { findHeroById } from "./services/hero.services";
+// import { findHeroById } from "./services/hero.services";
 
 
-const hero = findHeroById(2);
-console.log(hero?.name);
+// const hero = findHeroById(2);
+// console.log(hero?.name);

@@ -3,3 +3,5 @@
 02-bases/node_modules/
 03-typescript/node_modules/
 *.log
+
+.DS_Store
