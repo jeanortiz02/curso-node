@@ -1,7 +1,8 @@
 
 
 02-bases/node_modules/
+04-multiplacation/node_modules/
 03-typescript/node_modules/
 *.log
-
 .DS_Store
+02-bases/coverage/
