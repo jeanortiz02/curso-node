@@ -37,7 +37,7 @@ export const yarg = yargs(hideBin(process.argv))
     })
     .check((argv, options) => {
 
-        if( argv.b <= 0 ) throw ('Base number must be a positive integer');
+        if( argv.b < 1 ) throw ('Base number must be a positive integer');
         
 
         return true;

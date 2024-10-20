@@ -12,9 +12,11 @@ interface RunOptions {
 
 
 export class ServerApp {
-
-    
+   
     static async run({base, limit, showTable, fileName, fileDestination } : RunOptions) {
+
+        console.log('Server running...');
+
         const table = new CreateTable()
             .execute({base, limit});
 
@@ -28,8 +30,8 @@ export class ServerApp {
         if(showTable) console.log(table);
 
         (wasCreated) 
-            ? console.log('Archivo creado con éxito')
-            : console.log('Error al crear el archivo');
+            ? console.log('File created')
+            : console.error('File not created');
     };
 
 
