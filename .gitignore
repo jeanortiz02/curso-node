@@ -8,3 +8,5 @@
 04-multiplacation/node_modules/
 05-NOC/node_modules/
 06-JSON-SERVER/node_modules/
+
+*/*.env
