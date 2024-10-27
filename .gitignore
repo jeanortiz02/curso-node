@@ -7,6 +7,7 @@
 03-typescript/node_modules/
 04-multiplacation/node_modules/
 05-NOC/node_modules/
+05-NOC/mongo/
 06-JSON-SERVER/node_modules/
 
 */*.env
