@@ -30,7 +30,10 @@ export class LogEntity {
         this.origin = origin;
     }
 
-    static fromJson = (json: string):LogEntity => {
+    static fromJson = (json: string = '{}'):LogEntity => {
+
+        json = ( json === '') ? '{}' : json;
+
        const { message, level, createdAt, origin } = JSON.parse(json);
 
        const log = new LogEntity({
@@ -42,5 +45,18 @@ export class LogEntity {
        log.createdAt = new Date(createdAt);
        return log;
     //    if ( !message ) throw new Error(`Message is required`);
+    }
+
+    static fromObject = (object: { [key: string] : any } ): LogEntity => {
+        const { message, level, createdAt, origin } = object;
+
+        const log = new LogEntity({
+            level, 
+            message, 
+            origin, 
+            createdAt
+        })
+
+        return log;
     }
 }

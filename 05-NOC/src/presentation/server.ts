@@ -5,11 +5,26 @@ import { FileSystemDataSource } from '../infrastructure/datasources/file-system.
 
 import { EmailService } from "./email/email.service";
 import { SendEmailLogs } from "../domain/use-cases/email/send-email-logs";
+import { CheckService } from "../domain/use-cases/checks/check-service";
+import { CronService } from "./cron/cron-services";
+import { MongoLogDataSource } from "../infrastructure/datasources/mongo-log.datasource";
+import { LogSeverityLevel } from "../domain/entities/log-entity";
+import { PostgresLogDataSource } from './../infrastructure/datasources/postgres-log.datasource';
+import { CheckServiceMultiple } from "../domain/use-cases/checks/check-multiple";
 
 
-const fileSystemLogRepository = new LogRespositoryImpl(
+const fsLogRepository = new LogRespositoryImpl(
     new FileSystemDataSource()
-)
+);
+
+const mongoLogRepository = new LogRespositoryImpl(
+    new MongoLogDataSource()
+);
+
+const postgresLogRepository = new LogRespositoryImpl(
+    new PostgresLogDataSource()
+);
+
 const emailService = new EmailService( );
 
 export class Server {
@@ -40,13 +55,30 @@ export class Server {
         // })
 
 
-        // Mandar email
+        // const log = logRepository.getLogs(LogSeverityLevel.low);
+        // console.log(log);
+
        
-        // CronService.createJob('*/5 * * * * *', 
+        // CronService.createJob('*/15 * * * * *', 
         // () => {
         //     const url = 'https:google.com'
+
         //     new CheckService(
-        //         fileSystemLogRepository,
+        //         logRepository,
+        //         () => console.log(`${url} ok`),
+        //         (error) => console.log(`Error on check: ${error} en ${url}`)
+        //     ).execute(url);
+            
+        // });
+
+
+
+        // CronService.createJob('*/15 * * * * *', 
+        // () => {
+        //     const url = 'https:google.com'
+
+        //     new CheckServiceMultiple(
+        //         [fsLogRepository, mongoLogRepository, postgresLogRepository],
         //         () => console.log(`${url} ok`),
         //         (error) => console.log(`Error on check: ${error} en ${url}`)
         //     ).execute(url);
