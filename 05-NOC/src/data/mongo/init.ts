@@ -18,10 +18,11 @@ export class MongoDataBase {
                 dbName: dbName
             });
 
-            console.log('Mongoose connection')
+            // console.log('Mongoose connection');
+            return true;
 
         } catch (error) {
-            console.error(`Error connecting to MongoDB`);
+            // console.error(`Error connecting to MongoDB`);
             throw error;
         }
     }
