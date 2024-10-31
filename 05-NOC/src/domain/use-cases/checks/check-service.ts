@@ -33,20 +33,21 @@ export class CheckService implements CheckServiceUseCase {
             this.LogRepository.saveLog( log );
             this.successCallback && this.successCallback();
 
-        return true;
-    } catch (error) {
-        const errorMessage = `${url} is not ok ${error}`
-        
-        const log = new LogEntity({
-            message: errorMessage,
-            level: LogSeverityLevel.high,
-            origin: 'check-service.ts'
-        });
+            return true;
+        } catch (error) {
+            const errorMessage = `${url} is not ok ${error}`
+            
+            const log = new LogEntity({
+                message: errorMessage,
+                level: LogSeverityLevel.high,
+                origin: 'check-service.ts'
+            });
 
 
-        this.LogRepository.saveLog( log );
-        this.errorCallback && this.errorCallback(errorMessage);
-        return false;
+            this.LogRepository.saveLog( log );
+            this.errorCallback && this.errorCallback(errorMessage);
+            return false;
+            
         }
     }
 }
