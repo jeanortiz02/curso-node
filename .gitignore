@@ -13,5 +13,6 @@
 05-NOC/postgres-test/
 05-NOC/coverage/
 06-JSON-SERVER/node_modules/
+07-RESTWeb/node_modules/
 
 */*.env
