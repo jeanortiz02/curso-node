@@ -2,17 +2,26 @@
 
 .DS_Store
 *.log
+
 02-bases/coverage
 02-bases/node_modules/
+
 03-typescript/node_modules/
+
 04-multiplacation/node_modules/
+
 05-NOC/node_modules/
 05-NOC/mongo/
 05-NOC/mongo-test/
 05-NOC/postgres/
 05-NOC/postgres-test/
 05-NOC/coverage/
+
 06-JSON-SERVER/node_modules/
+
+
 07-RESTWeb/node_modules/
+07-RESTWeb/env/
+07-RESTWeb/keys/
 
 */*.env
