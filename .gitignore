@@ -23,5 +23,6 @@
 07-RESTWeb/node_modules/
 07-RESTWeb/env/
 07-RESTWeb/keys/
+07-RESTWeb/postgres/
 
 */*.env

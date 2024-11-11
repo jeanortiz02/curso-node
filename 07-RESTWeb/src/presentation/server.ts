@@ -27,6 +27,8 @@ export class Server {
     async start() {
 
         //* Middleware
+        // serial for converted request POST in JSON format
+        this.app.use( express.json() );
         
         //* Public Folder
         this.app.use(express.static(this.publicPath));
