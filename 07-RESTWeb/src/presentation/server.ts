@@ -1,5 +1,6 @@
 
 import express, { Router } from 'express';
+import compression from 'compression';
 import path from 'path';
 
 
@@ -29,6 +30,7 @@ export class Server {
         //* Middleware
         // serial for converted request POST in JSON format
         this.app.use( express.json() );
+        this.app.use( compression() );
         
         //* Public Folder
         this.app.use(express.static(this.publicPath));
