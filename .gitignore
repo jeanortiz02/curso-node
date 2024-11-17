@@ -24,5 +24,6 @@
 07-RESTWeb/env/
 07-RESTWeb/keys/
 07-RESTWeb/postgres/
+07-RESTWeb/coverage/
 
 */*.env
