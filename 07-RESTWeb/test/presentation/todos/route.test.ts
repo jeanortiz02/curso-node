@@ -63,7 +63,7 @@ describe('todo route testing', () => {
         const todoId = 2295
         const { body } = await request(testServer.app )
         .get(`/api/todos/${todoId}`)
-        .expect(400)
+        .expect(404)
 
 
         // console.log( body );
@@ -141,7 +141,7 @@ describe('todo route testing', () => {
                 text: 'Hola mundo Updated',
                 completedAt: '2024-11-17'
             } )
-            .expect(400)
+            .expect(404)
 
         expect( body ).toEqual({ err: `Todo with id ${todoId} not found` })
             
@@ -188,9 +188,9 @@ describe('todo route testing', () => {
             const todoId = 2332;
             const { body } = await request(testServer.app)
                 .delete(`/api/todos/${todoId}`)
-                .expect(400)
+                .expect(404)
 
-            console.log(body)
+            // console.log(body)
             expect( body ).toEqual({ err: `Todo with id ${todoId} not found` })
           })
 

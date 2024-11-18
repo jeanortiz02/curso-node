@@ -26,4 +26,8 @@
 07-RESTWeb/postgres/
 07-RESTWeb/coverage/
 
+
+08-user-store/mongo
+
+*/node_modules/
 */*.env
